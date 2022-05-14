@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "9cd28a90-392d-4ac6-9ba5-7eb8bf0ea9ad",
+		"name": "Group_29_Postman_HW2_Kunkevich_Maksim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task_1_first",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Maksim",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "34",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "salary",
+							"value": "2000",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/first",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"first"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Maksim",
+							"disabled": true
+						},
+						{
+							"key": "age",
+							"value": "34",
+							"disabled": true
+						},
+						{
+							"key": "salary",
+							"value": "2000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
