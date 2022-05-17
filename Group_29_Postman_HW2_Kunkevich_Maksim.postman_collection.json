@@ -6,11 +6,7 @@
 	},
 	"item": [
 		{
-<<<<<<< HEAD
 			"name": "Task_1_5007/first",
-=======
-			"name": "Task_1_first",
->>>>>>> f63b2e671905da1435fb49c58cb549c6674ec382
 			"event": [
 				{
 					"listen": "test",
@@ -54,11 +50,7 @@
 					]
 				},
 				"url": {
-<<<<<<< HEAD
 					"raw": "http://162.55.220.72:5007/first",
-=======
-					"raw": "http://162.55.220.72:5005/first",
->>>>>>> f63b2e671905da1435fb49c58cb549c6674ec382
 					"protocol": "http",
 					"host": [
 						"162",
@@ -66,11 +58,7 @@
 						"220",
 						"72"
 					],
-<<<<<<< HEAD
 					"port": "5007",
-=======
-					"port": "5005",
->>>>>>> f63b2e671905da1435fb49c58cb549c6674ec382
 					"path": [
 						"first"
 					],
@@ -94,7 +82,6 @@
 				}
 			},
 			"response": []
-<<<<<<< HEAD
 		},
 		{
 			"name": "Task_2_5007/user_info_3",
@@ -188,7 +175,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://162.55.220.72:5007/user_info_3?name=Max&age=34&salary=800",
+					"raw": "http://162.55.220.72:5007/user_info_3",
 					"protocol": "http",
 					"host": [
 						"162",
@@ -203,15 +190,18 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Max"
+							"value": "Max",
+							"disabled": true
 						},
 						{
 							"key": "age",
-							"value": "34"
+							"value": "34",
+							"disabled": true
 						},
 						{
 							"key": "salary",
-							"value": "800"
+							"value": "800",
+							"disabled": true
 						}
 					]
 				}
@@ -561,8 +551,6 @@
 				}
 			},
 			"response": []
-=======
->>>>>>> f63b2e671905da1435fb49c58cb549c6674ec382
 		}
 	]
 }
