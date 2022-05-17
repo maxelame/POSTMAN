@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "1c2068e1-bd05-4546-9f04-a16d807dc0d6",
+		"name": "Postman_Lesson_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post_5005/user_info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"let req = JSON.parse(request.data)\r",
+							"// check salary\r",
+							"let req_salary = req.salary \r",
+							"// check age\r",
+							"let req_age = req.age \r",
+							"// check name\r",
+							"let req_name = req.name \r",
+							"\r",
+							"// RESPONSE\r",
+							"let salary_check_12 = req_salary * 2.9\r",
+							"let salary_12 = jsonData.qa_salary_after_12_months\r",
+							"let resp_age = jsonData.person.u_name[2]\r",
+							"\r",
+							"\r",
+							"// console.log(\"resp_age =\", resp_age)\r",
+							"// console.log(salary_check_12)\r",
+							"// console.log(salary_12)\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"// let salary_check_12 = jsonData.person.u_name[1] * 2.9\r",
+							"// let salary_12 = jsonData.qa_salary_after_12_months\r",
+							"// console.log(salary_check_12)\r",
+							"// console.log(salary_12)\r",
+							"\r",
+							"// let req = JSON.parse(request.data)\r",
+							"// let req_salary = req.salary\r",
+							"// console.log(\"req_salary =\", req_salary )\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Salary_check_12_Test\", function () {\r",
+							"    pm.expect(salary_12).to.eql(salary_check_12);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Age_check_Test\", function () {\r",
+							"    pm.expect(req_age).to.eql(resp_age);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Max\",\r\n    \"age\": 34,\r\n    \"salary\": 2000,\r\n    \"auth_token\": \"{{token}}\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}:{{port}}/user_info",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"user_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_5005/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Спарсить JSON\r",
+							"let jsonData = pm.response.json()\r",
+							"// Забрали с JSON  токен\r",
+							"let user_token = jsonData.token\r",
+							"// С помощью этого скрипта в окружение ENV_Group_29 в переменную токен отправили это значение\r",
+							"pm.environment.set(\"token\", user_token)\r",
+							"\r",
+							"// Это значение можем передовать в другие запросы, которые требуют, чтобы пользователь был залогинен.\r",
+							"// Чтобы в каждом его запросе был токен залогигенного пользователя\r",
+							"// \"auth_token\":\"{{token}}\"\r",
+							"// \"{{token}}\" - токен забран из нужного нам окружения ENV_Group_29"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "Max",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1231231231",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/login",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
