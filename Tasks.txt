@@ -38,6 +38,7 @@ response:
 
 
 ==================
+
 EP_3
 Method: GET
 EndPoint: /object_info_1
