@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "bf00e5b0-c77f-471a-8539-3ecafa1c3b1a",
+		"name": "HW_anatoly_edition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20481413"
+	},
+	"item": [
+		{
+			"name": "Anatoly_5007/object_info_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let req_sal = pm.request.url.query.get('salary')\r",
+							"// console.log(req_sal)\r",
+							"\r",
+							"let resp_sal = pm.response.json().salary\r",
+							"// console.log(resp_sal)\r",
+							"// for (let i=0; i <=resp_sal.length-1; i++){\r",
+							"//     pm.test(`req_sal*${i+1} ${req_sal * (i+1)}== resp_sal  ${resp_sal[i]}`, function () {\r",
+							"//         pm.expect(+req_sal*(i+1)).to.eql(+resp_sal[i])\r",
+							"//         // console.log(+req_sal*(i+1))\r",
+							"//     })\r",
+							"// }\r",
+							"\r",
+							"resp_sal.forEach((el,i) => {\r",
+							"    pm.test(`req_sal*${i+1} ${req_sal * (i+1)}== resp_sal  ${el}`, function () {\r",
+							"        pm.expect(+req_sal*(i+1)).to.eql(+el)\r",
+							"    })\r",
+							"})\r",
+							"\r",
+							"// //2. Статус код 200\r",
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"// //3. Спарсить response body в json.\r",
+							"// let responceData = pm.response.json();\r",
+							"\r",
+							"// //4. Спарсить request.\r",
+							"// let requestData = pm.request.url.query.toObject();\r",
+							"\r",
+							"// //5. Проверить, что name в ответе равно name s request (name забрать из request.)\r",
+							"// pm.test(\"Check responce name\", function () {\r",
+							"//     pm.expect(responceData.name).to.eql(requestData.name);\r",
+							"// });\r",
+							"\r",
+							"// //6. Проверить, что age в ответе равно age из request (age забрать из request.)\r",
+							"// pm.test(\"Check responce age\", function () {\r",
+							"//     pm.expect(+responceData.age).to.eql(+requestData.age);\r",
+							"// });\r",
+							"\r",
+							"// //7. Вывести в консоль параметр salary из request.\r",
+							"// console.log(requestData.salary)\r",
+							"\r",
+							"// //8. Вывести в консоль параметр salary из response.\r",
+							"// console.log(responceData.salary)\r",
+							"\r",
+							"// //9. Вывести в консоль 0-й элемент параметра salary из response.\r",
+							"// console.log(responceData.salary[0])\r",
+							"\r",
+							"// //10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.\r",
+							"// console.log(responceData.salary[1])\r",
+							"\r",
+							"// //11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.\r",
+							"// console.log(responceData.salary[2])\r",
+							"\r",
+							"// //12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)\r",
+							"// pm.test(\"Check salary\", function () {\r",
+							"//     pm.expect(+responceData.salary[0]).to.eql(+requestData.salary);\r",
+							"// });\r",
+							"\r",
+							"// //13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)\r",
+							"// pm.test(\"Check salary*2\", function () {\r",
+							"//     pm.expect(+responceData.salary[1]).to.eql(+requestData.salary*2);\r",
+							"// });\r",
+							"\r",
+							"// //14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)\r",
+							"// pm.test(\"Check salary*3\", function () {\r",
+							"//     pm.expect(+responceData.salary[2]).to.eql(+requestData.salary*3);\r",
+							"// });\r",
+							"\r",
+							"// //21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.\r",
+							"\r",
+							"// responceData.salary.forEach(function(salary, index){ \r",
+							"//     console.log('Элемент из списка salary № ' + index + ' ' + salary)});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_4?name=Max&age=34&salary=800",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Max"
+						},
+						{
+							"key": "age",
+							"value": "34"
+						},
+						{
+							"key": "salary",
+							"value": "800"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
